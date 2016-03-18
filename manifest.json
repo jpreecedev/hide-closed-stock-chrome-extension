@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "Google Finance - Hide Closed Positions",
+    "version": "1.0",
+    "description": "Hides closed stock positions on the Google Finance Portfolio web application",
+    "author": "Jon Preece",
+    "homepage_url": "https://github.com/jpreecedev/hide-closed-stock-chrome-extension",
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "background": {
+        "persistent": false,
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [{
+        "matches": ["*://*.google.co.uk/finance/portfolio*"],
+        "js": ["content.js"]
+  }],
+    "browser_action": {
+        "default_title": "Google Finance - Hide Closed Positions"
+    },
+    "permissions": ["activeTab"]
+}
